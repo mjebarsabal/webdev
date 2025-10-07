@@ -1,0 +1,175 @@
+:root {
+  /* 🌸 Custom Palette */
+  --primary-color: #F9C9D0;     /* Background accents, button hover */
+  --secondary-color: #E7A4B1;   /* Buttons, headers, navbar */
+  --neutral-bg: #FAF8F5;        /* Main background */
+  --accent-color: #C8B17F;      /* Highlights, borders */
+  --contrast-color: #3D3934;    /* Text */
+}
+
+/* Apply body background */
+body {
+  background-color: var(--neutral-bg);
+  color: var(--contrast-color);
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Navbar */
+.bg-brand {
+  background-color: var(--secondary-color) !important;
+  color: var(--contrast-color);
+}
+.navbar-brand, .nav-link {
+  color: var(--contrast-color) !important;
+}
+.nav-link:hover {
+  color: var(--accent-color) !important;
+}
+
+/* Hero Header */
+.custom-hero {
+  background-color: var(--primary-color) !important;
+  color: var(--contrast-color) !important;
+  background-blend-mode: multiply;
+}
+.custom-hero .btn-light {
+  background-color: var(--secondary-color);
+  border: none;
+  color: white;
+}
+.custom-hero .btn-light:hover {
+  background-color: var(--primary-color);
+  color: var(--contrast-color);
+}
+
+/* Cards */
+.card {
+  background-color: white;
+  border: 1px solid var(--accent-color);
+  color: var(--contrast-color);
+}
+
+/* Footer */
+.custom-footer {
+  background-color: var(--secondary-color);
+  color: white;
+}
+.custom-footer a {
+  color: white;
+}
+.custom-footer a:hover {
+  color: var(--accent-color);
+}
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(var(--bs-dark-rgb), 0.2); 
+    }
+    header .container {
+      position: relative;
+      z-index: 2;
+    }
+    .navbar-brand{
+        font-size: 1.0rem;
+        font-style: oblique;
+        background-color: var(--bs-primary);
+    }
+
+    .bg-brand {
+        background-color: #eee0ce;
+    }
+    .navbar-nav .nav-link {
+      color: var(--bs-dark);
+    } 
+    .category {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    .card img {
+      object-fit: cover;
+      height: 300px;  
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(var(--bs-dark-rgb), 0.2); 
+      transition: 0.3s;
+    }
+
+    .card .btn{
+       background-color: var(--bs-primary);
+      color: var(--bs-dark);
+      border-color: var(--bs-primary);
+    }
+    .card .btn:hover {
+      background-color: var(--bs-secondary); /* Rose Glow on hover */
+      border-color: var(--bs-secondary);
+      color: var(--bs-dark);
+    }
+    .search-bar {
+    position: relative;
+    width: 100%;
+    max-width: 200px;
+    
+    }
+
+    .search-bar input {
+      width: 100%;
+        padding: 10px 40px 10px 20px;
+        border-radius: 30px;  
+        border: none;
+        background-color: #f2f2f2; 
+        outline: none;
+    }
+
+    .search-bar input::placeholder {
+      color: #888;
+    }
+
+    .search-bar button {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        border: none;
+        background: none;
+        color: var(--bs-dark); 
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    .search-bar button:hover {
+      color: var(--bs-secondary);
+    }
+
+    .btn-light {
+        background-color: var(--bs-dark); 
+        border-color: var(--bs-dark);
+        color: var(--bs-light); 
+        border-radius: 50px;
+        font-size: 1.0rem;
+    }
+
+    .btn-light:hover {
+        background-color: #5E503F; 
+        border-color: #5E503F;
+        color: var(--bs-light);
+    }
+
+    header {
+      min-height: 75vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+  .bg-light {
+      background-color: var(--bs-light) !important; 
+    }
+    footer {
+      background-color: #3D3934; 
+      text-decoration: none;
+    }
