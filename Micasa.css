@@ -16,7 +16,7 @@
     }
 
     .bg-brand {
-        background-color: #eee0ce;
+        background-color: #f4b4c4;
     }
     .navbar-nav .nav-link {
       color: #000000;
@@ -92,10 +92,10 @@ header {
 }
 
 .bg-light {
-  background-color: #eee0ce !important;
+  background-color: #fce4ec !important;
 }
 footer {
     /* color: #5E503F; */
-    background-color: #27221b;
+    background-color: #d48ca1;
     text-decoration: none;
 }
