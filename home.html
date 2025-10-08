@@ -166,10 +166,12 @@
 
 <script>
 $(document).ready(function() {
-  // Load the modal from login.html only once when user clicks the icon
+  console.log("✅ jQuery loaded");
+
+  // Open modal on user icon click
   $('#loginButton').on('click', function(e) {
     e.preventDefault();
-    if (!$('#authModal').length) { // load only once
+    if (!$('#authModal').length) {
       $('body').append('<div id="modalContainer"></div>');
       $('#modalContainer').load('login-modal.html #authModal', function() {
         $('#authModal').modal('show');
@@ -179,7 +181,7 @@ $(document).ready(function() {
     }
   });
 
-  // Delegated events (for elements inside dynamically loaded modal)
+  // Delegated events for dynamically loaded content
   $(document).on('click', '.toggle-password', function() {
     const target = $($(this).data('target'));
     const type = target.attr('type') === 'password' ? 'text' : 'password';
@@ -187,6 +189,7 @@ $(document).ready(function() {
     $(this).toggleClass('fa-eye fa-eye-slash');
   });
 
+  // Switch between login and signup forms
   $(document).on('click', '#openSignup', function(e) {
     e.preventDefault();
     $('#loginFormContainer').addClass('d-none');
@@ -201,19 +204,62 @@ $(document).ready(function() {
     $('#modalTitle').text('Login');
   });
 
+  // Validate Login Form
+  $(document).on('submit', '#loginForm', function(e) {
+    e.preventDefault();
+    let valid = true;
+
+    const username = $('#username').val().trim();
+    const password = $('#password').val().trim();
+
+    $('#usernameError, #passwordErrorLogin').text('');
+
+    if (!username) {
+      $('#usernameError').text('Username is required.');
+      valid = false;
+    }
+    if (!password) {
+      $('#passwordErrorLogin').text('Password is required.');
+      valid = false;
+    }
+
+    if (valid) {
+      alert('Login successful! (demo only)');
+      $('#authModal').modal('hide');
+    }
+  });
+
+  // Validate Signup Form
   $(document).on('submit', '#signupForm', function(e) {
     e.preventDefault();
+    let valid = true;
+
+    // Clear previous errors
+    $('.error-msg').text('');
+
+    const firstName = $('#firstName').val().trim();
+    const lastName = $('#lastName').val().trim();
+    const address = $('#address').val().trim();
+    const email = $('#email').val().trim();
+    const contact = $('#contact').val().trim();
     const pass = $('#signupPassword').val();
     const confirm = $('#confirmPassword').val();
-    if (pass !== confirm) {
-      $('#passwordError').text('Password did not match.');
-    } else {
-      $('#passwordError').text('');
-      alert('Sign up successful! (demo only)');
+
+    if (!firstName) { $('#firstNameError').text('First name is required.'); valid = false; }
+    if (!lastName) { $('#lastNameError').text('Last name is required.'); valid = false; }
+    if (!address) { $('#addressError').text('Address is required.'); valid = false; }
+    if (!email) { $('#emailError').text('Email is required.'); valid = false; }
+    if (!contact) { $('#contactError').text('Contact number is required.'); valid = false; }
+    if (!pass) { $('#signupPasswordError').text('Password is required.'); valid = false; }
+    if (pass !== confirm) { $('#confirmPasswordError').text('Passwords did not match.'); valid = false; }
+
+    if (valid) {
+      alert('Sign-up successful! (demo only)');
       $('#authModal').modal('hide');
     }
   });
 });
 </script>
+
 </body>
 </html>
