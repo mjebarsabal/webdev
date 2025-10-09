@@ -22,9 +22,9 @@ body {
 .navbar-brand, .nav-link {
   color: var(--contrast-color) !important;
 }
-.nav-link:hover {
+/* .nav-link:hover {
   color: var(--accent-color) !important;
-}
+} */
 
 /* Hero Header */
 .custom-hero {
