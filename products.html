@@ -84,6 +84,104 @@
     <p class="mb-0 text-center" style="font-size: 0.8rem;">© 2025 Aetheria Beauty. All Rights Reserved.</p>
 
   </footer>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
+<script>
+$(document).ready(function() {
+  console.log("✅ jQuery loaded");
+
+  // Open modal on user icon click
+  $('#loginButton').on('click', function(e) {
+    e.preventDefault();
+    if (!$('#authModal').length) {
+      $('body').append('<div id="modalContainer"></div>');
+      $('#modalContainer').load('login-modal.html #authModal', function() {
+        $('#authModal').modal('show');
+      });
+    } else {
+      $('#authModal').modal('show');
+    }
+  });
+
+  // Delegated events for dynamically loaded content
+  $(document).on('click', '.toggle-password', function() {
+    const target = $($(this).data('target'));
+    const type = target.attr('type') === 'password' ? 'text' : 'password';
+    target.attr('type', type);
+    $(this).toggleClass('fa-eye fa-eye-slash');
+  });
+
+  // Switch between login and signup forms
+  $(document).on('click', '#openSignup', function(e) {
+    e.preventDefault();
+    $('#loginFormContainer').addClass('d-none');
+    $('#signupFormContainer').removeClass('d-none');
+    $('#modalTitle').text('Sign Up');
+  });
+
+  $(document).on('click', '#openLogin', function(e) {
+    e.preventDefault();
+    $('#signupFormContainer').addClass('d-none');
+    $('#loginFormContainer').removeClass('d-none');
+    $('#modalTitle').text('Login');
+  });
+
+  // Validate Login Form
+  $(document).on('submit', '#loginForm', function(e) {
+    e.preventDefault();
+    let valid = true;
+
+    const username = $('#username').val().trim();
+    const password = $('#password').val().trim();
+
+    $('#usernameError, #passwordErrorLogin').text('');
+
+    if (!username) {
+      $('#usernameError').text('Username is required.');
+      valid = false;
+    }
+    if (!password) {
+      $('#passwordErrorLogin').text('Password is required.');
+      valid = false;
+    }
+
+    if (valid) {
+      alert('Login successful! (demo only)');
+      $('#authModal').modal('hide');
+    }
+  });
+
+  // Validate Signup Form
+  $(document).on('submit', '#signupForm', function(e) {
+    e.preventDefault();
+    let valid = true;
+
+    // Clear previous errors
+    $('.error-msg').text('');
+
+    const firstName = $('#firstName').val().trim();
+    const lastName = $('#lastName').val().trim();
+    const address = $('#address').val().trim();
+    const email = $('#email').val().trim();
+    const contact = $('#contact').val().trim();
+    const pass = $('#signupPassword').val();
+    const confirm = $('#confirmPassword').val();
+
+    if (!firstName) { $('#firstNameError').text('First name is required.'); valid = false; }
+    if (!lastName) { $('#lastNameError').text('Last name is required.'); valid = false; }
+    if (!address) { $('#addressError').text('Address is required.'); valid = false; }
+    if (!email) { $('#emailError').text('Email is required.'); valid = false; }
+    if (!contact) { $('#contactError').text('Contact number is required.'); valid = false; }
+    if (!pass) { $('#signupPasswordError').text('Password is required.'); valid = false; }
+    if (pass !== confirm) { $('#confirmPasswordError').text('Passwords did not match.'); valid = false; }
+
+    if (valid) {
+      alert('Sign-up successful! (demo only)');
+      $('#authModal').modal('hide');
+    }
+  });
+});
+</script>
 </body>
 </html>
