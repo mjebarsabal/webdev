@@ -168,7 +168,9 @@
 $(document).ready(function() {
   console.log("✅ jQuery loaded");
 
-  // Open modal on user icon click
+  // ---------------------------
+  // OPEN LOGIN MODAL
+  // ---------------------------
   $('#loginButton').on('click', function(e) {
     e.preventDefault();
     if (!$('#authModal').length) {
@@ -181,7 +183,9 @@ $(document).ready(function() {
     }
   });
 
-  // Delegated events for dynamically loaded content
+  // ---------------------------
+  // PASSWORD TOGGLE
+  // ---------------------------
   $(document).on('click', '.toggle-password', function() {
     const target = $($(this).data('target'));
     const type = target.attr('type') === 'password' ? 'text' : 'password';
@@ -189,7 +193,9 @@ $(document).ready(function() {
     $(this).toggleClass('fa-eye fa-eye-slash');
   });
 
-  // Switch between login and signup forms
+  // ---------------------------
+  // SWITCH LOGIN / SIGNUP FORMS
+  // ---------------------------
   $(document).on('click', '#openSignup', function(e) {
     e.preventDefault();
     $('#loginFormContainer').addClass('d-none');
@@ -204,62 +210,168 @@ $(document).ready(function() {
     $('#modalTitle').text('Login');
   });
 
-  // Validate Login Form
+  // ---------------------------
+  // INPUT SANITIZATION
+  // ---------------------------
+  // Prevent multiple/leading spaces in names
+  $(document).on('input', '#firstName, #lastName', function() {
+    let value = $(this).val();
+    value = value.replace(/^\s+/, '').replace(/\s{2,}/g, ' ');
+    value = value.replace(/[^a-zA-Z\s]/g, '');
+    $(this).val(value);
+  });
+
+  // Trim and remove multiple spaces in address
+  $(document).on('input', '#address', function() {
+    let value = $(this).val().replace(/^\s+/, '').replace(/\s{2,}/g, ' ');
+    $(this).val(value);
+  });
+
+  // Email: remove spaces immediately, keep cursor at end
+  $(document).on('input', '#email, #loginEmail', function() {
+    let cursorPos = this.selectionStart;
+    let value = $(this).val().replace(/\s+/g, '');
+    $(this).val(value);
+    this.setSelectionRange(cursorPos, cursorPos);
+  });
+
+  // Contact: only digits, require 11 digits max
+  $(document).on('input', '#contact', function() {
+    let value = $(this).val().replace(/\D/g, '');
+    if (value.length > 11) value = value.slice(0, 11);
+    $(this).val(value);
+  });
+
+  // Password: no spaces allowed
+  $(document).on('input', '#password, #signupPassword, #confirmPassword', function() {
+    let value = $(this).val().replace(/\s+/g, '');
+    $(this).val(value);
+  });
+
+  // ---------------------------
+  // INLINE ERROR STYLING
+  // ---------------------------
+  function showInputError(input, message) {
+    input.addClass('is-invalid');
+    input.attr('placeholder', message);
+    input.val('');
+  }
+
+  function clearInputError(input, placeholderText) {
+    input.removeClass('is-invalid');
+    input.attr('placeholder', placeholderText);
+  }
+
+  // ---------------------------
+  // LOGIN VALIDATION
+  // ---------------------------
   $(document).on('submit', '#loginForm', function(e) {
     e.preventDefault();
     let valid = true;
 
-    const username = $('#username').val().trim();
-    const password = $('#password').val().trim();
+    const email = $('#loginEmail');
+    const password = $('#password');
 
-    $('#usernameError, #passwordErrorLogin').text('');
+    clearInputError(email, 'Enter Email');
+    clearInputError(password, 'Enter Password');
 
-    if (!username) {
-      $('#usernameError').text('Username is required.');
+    const emailVal = email.val().trim();
+    const passVal = password.val().trim();
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailVal) {
+      showInputError(email, 'Email required');
+      valid = false;
+    } else if (!emailPattern.test(emailVal)) {
+      showInputError(email, 'Invalid email');
       valid = false;
     }
-    if (!password) {
-      $('#passwordErrorLogin').text('Password is required.');
+
+    if (!passVal) {
+      showInputError(password, 'Password required');
       valid = false;
     }
 
     if (valid) {
-      alert('Login successful! (demo only)');
+      alert('✅ Login successful! (demo only)');
       $('#authModal').modal('hide');
     }
   });
 
-  // Validate Signup Form
+  // ---------------------------
+  // SIGNUP VALIDATION
+  // ---------------------------
   $(document).on('submit', '#signupForm', function(e) {
     e.preventDefault();
     let valid = true;
 
-    // Clear previous errors
-    $('.error-msg').text('');
+    const firstName = $('#firstName');
+    const lastName = $('#lastName');
+    const address = $('#address');
+    const email = $('#email');
+    const contact = $('#contact');
+    const pass = $('#signupPassword');
+    const confirm = $('#confirmPassword');
 
-    const firstName = $('#firstName').val().trim();
-    const lastName = $('#lastName').val().trim();
-    const address = $('#address').val().trim();
-    const email = $('#email').val().trim();
-    const contact = $('#contact').val().trim();
-    const pass = $('#signupPassword').val();
-    const confirm = $('#confirmPassword').val();
+    const placeholders = {
+      firstName: 'First Name',
+      lastName: 'Last Name',
+      address: 'Address',
+      email: 'Email',
+      contact: 'Contact Number',
+      pass: 'Password',
+      confirm: 'Retype Password'
+    };
 
-    if (!firstName) { $('#firstNameError').text('First name is required.'); valid = false; }
-    if (!lastName) { $('#lastNameError').text('Last name is required.'); valid = false; }
-    if (!address) { $('#addressError').text('Address is required.'); valid = false; }
-    if (!email) { $('#emailError').text('Email is required.'); valid = false; }
-    if (!contact) { $('#contactError').text('Contact number is required.'); valid = false; }
-    if (!pass) { $('#signupPasswordError').text('Password is required.'); valid = false; }
-    if (pass !== confirm) { $('#confirmPasswordError').text('Passwords did not match.'); valid = false; }
+    clearInputError(firstName, placeholders.firstName);
+    clearInputError(lastName, placeholders.lastName);
+    clearInputError(address, placeholders.address);
+    clearInputError(email, placeholders.email);
+    clearInputError(contact, placeholders.contact);
+    clearInputError(pass, placeholders.pass);
+    clearInputError(confirm, placeholders.confirm);
+
+    const fVal = firstName.val().trim();
+    const lVal = lastName.val().trim();
+    const aVal = address.val().trim();
+    const eVal = email.val().trim();
+    const cVal = contact.val().trim();
+    const pVal = pass.val().trim();
+    const confVal = confirm.val().trim();
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // Basic field validation
+    if (!fVal) { showInputError(firstName, 'Invalid name'); valid = false; }
+    if (!lVal) { showInputError(lastName, 'Invalid name'); valid = false; }
+    if (!aVal) { showInputError(address, 'Address required'); valid = false; }
+    if (!eVal) { showInputError(email, 'Email required'); valid = false; }
+    else if (!emailPattern.test(eVal)) { showInputError(email, 'Invalid email'); valid = false; }
+
+    // Contact: must be 11 digits
+    if (!cVal) {
+      showInputError(contact, 'Contact required');
+      valid = false;
+    } else if (cVal.length !== 11) {
+      showInputError(contact, '11 digits only');
+      valid = false;
+    }
+
+    if (!pVal) { showInputError(pass, 'Password required'); valid = false; }
+    else if (pVal.length < 6) { showInputError(pass, 'Min 6 chars'); valid = false; }
+
+    if (!confVal) { showInputError(confirm, 'Retype password'); valid = false; }
+    else if (pVal !== confVal) { showInputError(confirm, 'Passwords mismatch'); valid = false; }
 
     if (valid) {
-      alert('Sign-up successful! (demo only)');
+      alert('✅ Sign-up successful! (demo only)');
       $('#authModal').modal('hide');
     }
   });
 });
 </script>
+
+
 
 </body>
 </html>
