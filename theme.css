@@ -173,3 +173,9 @@ body {
       background-color: #3D3934; 
       text-decoration: none;
     }
+.is-invalid {
+  border-color: #b3261e !important;
+  background-color: #fff3f3;
+  color: #b3261e !important;
+  font-style: italic;
+}
