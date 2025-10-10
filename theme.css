@@ -173,9 +173,71 @@ body {
       background-color: #3D3934; 
       text-decoration: none;
     }
-.is-invalid {
-  border-color: #b3261e !important;
-  background-color: #fff3f3;
-  color: #b3261e !important;
-  font-style: italic;
+
+/* ===== AUTH MODAL STYLING ===== */
+.auth-modal {
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+  background-color: var(--neutral-bg);
+  border: 1px solid var(--accent-color);
+}
+
+.modal-dialog-centered {
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - 1rem);
+}
+
+/* Input with icon inside */
+.input-inner {
+  position: relative;
+}
+
+.input-inner .form-control {
+  padding-right: 2.5rem;
+}
+
+.input-inner .toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 0.75rem;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  color: var(--accent-color);
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.input-inner .toggle-password:hover {
+  color: var(--secondary-color);
+}
+
+.error-msg {
+  color: var(--accent-color);
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+.modal-btn {
+  border-radius: 8px;
+  background-color: var(--secondary-color);
+  color: #fff;
+  border: none;
+  transition: 0.3s;
+}
+
+.modal-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--contrast-color);
+}
+
+.modal-link {
+  color: var(--secondary-color);
+  text-decoration: underline;
+  font-weight: 500;
+}
+.modal-link:hover {
+  color: var(--accent-color);
 }
