@@ -10,8 +10,10 @@
 
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link href="./dist/styles.css" rel="stylesheet">
+  <link href="theme.css" rel="stylesheet">
 
-  <title>Aetheria Beauty - Products</title>
+  <title>Aetheria Beauty - Nourish Tints</title>
 
   <style>
     body {
@@ -73,7 +75,7 @@
     .card-body h4 {
       font-size: 14px;
       font-weight: 400;
-      margin: 0 0 10px;
+      margin: 0 0 8px;
       color: #777;
     }
 
@@ -81,37 +83,35 @@
       font-size: 14px;
       color: #444;
       line-height: 1.4;
-      margin: 0 0 14px;
+      margin: 0 0 12px;
     }
 
     .price {
       font-size: 15px;
-      font-weight: bold;
-      color: #D14E79;
+      font-weight: 700;
+      color: #d14e79;
       margin-bottom: 12px;
     }
 
-    .add-cart {
-      background: #D14E79;
-      color: #fff;
+    .add-to-cart {
+      display: inline-block;
+      padding: 8px 20px;
+      border-radius: 20px;
       border: none;
-      padding: 10px 16px;
-      border-radius: 25px;
-      cursor: pointer;
+      background: #F9C9D0;
+      color: #5E503F;
       font-size: 14px;
       font-weight: 600;
-      transition: background 0.3s ease;
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
-    .add-cart i {
-      margin-right: 6px;
-    }
-    .add-cart:hover {
-      background: #b63f68;
+    .add-to-cart:hover {
+      background: #f7b4be;
     }
 
     /* Back button */
     .back-btn {
-      display: inline-block;
+     display: inline-block;
       margin: 40px auto 0;
       padding: 10px 26px;
       border-radius: 25px;
@@ -124,7 +124,7 @@
     }
     .back-btn:hover {
       background: #F9C9D0;
-      color: #5E503F; 
+      color: #5E503F;
     }
 
     .back-container {
@@ -134,72 +134,69 @@
 </head>
 <body>
 
-  <h2>Glimmer Gloss</h2>
+  <h2>Nourish Tints</h2>
   <div class="grid">
-
-    <!-- Card Example -->
+    <!-- Example card -->
     <div class="card">
-      <img src="../Image/2 Gloss BELIEVER.png" alt="Glimmer Gloss">
+      <img src="../Image/4 Sheer Pink Lip Balm.png" alt="Nourish Tints">
       <div class="card-body">
-        <h3>Believer</h3>
-        <h4>Timeless true red</h4>
-        <p>The iconic red lip gloss that never goes out of style.</p>
-        <div class="price">₱199</div>
-        <button class="add-cart"><i class="fas fa-cart-plus"></i>Add to Cart</button>
+        <h3>Dewy Rose</h3>
+        <h4>Hydrating rosy tint</h4>
+        <p>A soft rose tint with a dewy finish that keeps lips moisturized while adding a natural flush of color.</p>
+        <div class="price">₱180</div>
+        <button class="add-to-cart"><i class="fa fa-cart-plus"></i> Add to Cart</button>
       </div>
     </div>
 
     <div class="card">
-      <img src="../Image/2 Gloss ESCAPIST.png" alt="Glimmer Gloss">
+      <img src="../Image/4 Peach Tint Lip Balm.png" alt="Nourish Tints">
       <div class="card-body">
-        <h3>Escapist</h3>
-        <h4>Sophisticated mauve plum</h4>
-        <p>A sophisticated mauve gloss that flatters all skin tones beautifully.</p>
-        <div class="price">₱199</div>
-        <button class="add-cart"><i class="fas fa-cart-plus"></i>Add to Cart</button>
+        <h3>Peach Kiss</h3>
+        <h4>Warm peach glow</h4>
+        <p>A peachy tint that melts into lips for a subtle, sunkissed radiance with a balm-like softness.</p>
+        <div class="price">₱170</div>
+        <button class="add-to-cart"><i class="fa fa-cart-plus"></i> Add to Cart</button>
       </div>
     </div>
 
     <div class="card">
-      <img src="../Image/2 Gloss GOLDEN SHIMMER.png" alt="Glimmer Gloss">
+      <img src="../Image/4 Coral Lip Balm.png" alt="Nourish Tints">
       <div class="card-body">
-        <h3>Golden Shimmer</h3>
-        <h4>Fresh coral warmth</h4>
-        <p>A luminous coral gloss with a sun-kissed glow.</p>
-        <div class="price">₱199</div>
-        <button class="add-cart"><i class="fas fa-cart-plus"></i>Add to Cart</button>
+        <h3>Coral Dream</h3>
+        <h4>Bright coral tint</h4>
+        <p>A playful coral shade that instantly livens up your look while keeping lips silky smooth and nourished.</p>
+        <div class="price">₱200</div>
+        <button class="add-to-cart"><i class="fa fa-cart-plus"></i> Add to Cart</button>
       </div>
     </div>
 
     <div class="card">
-      <img src="../Image/2 Gloss PEPPY.png" alt="Glimmer Gloss">
+      <img src="../Image/4 Nude Mauve Lip Balm.png" alt="Nourish Tints">
       <div class="card-body">
-        <h3>Peppy</h3>
-        <h4>Romantic rose gloss</h4>
-        <p>Soft rose hue for a timeless, flirty glossy finish.</p>
-        <div class="price">₱199</div>
-        <button class="add-cart"><i class="fas fa-cart-plus"></i>Add to Cart</button>
+        <h3>Nude Whisper</h3>
+        <h4>Sheer nude tint</h4>
+        <p>A barely-there nude that enhances your natural lip color with a soft sheen and all-day moisture.</p>
+        <div class="price">₱190</div>
+        <button class="add-to-cart"><i class="fa fa-cart-plus"></i> Add to Cart</button>
       </div>
     </div>
 
     <div class="card">
-      <img src="../Image/2 Gloss SHEER PINK.png" alt="Glimmer Gloss">
+      <img src="../Image/4 BEST BABE BALM.png" alt="Nourish Tints">
       <div class="card-body">
-        <h3>Sheer Pink</h3>
-        <h4>Classic nude gloss</h4>
-        <p>Subtle beige tones for effortless everyday elegance.</p>
-        <div class="price">₱199</div>
-        <button class="add-cart"><i class="fas fa-cart-plus"></i>Add to Cart</button>
+        <h3>Berry Bloom</h3>
+        <h4>Juicy berry tint</h4>
+        <p>A nourishing berry shade that delivers a fresh, just-bitten look with lasting comfort and hydration.</p>
+        <div class="price">₱185</div>
+        <button class="add-to-cart"><i class="fa fa-cart-plus"></i> Add to Cart</button>
       </div>
     </div>
-
   </div>
 
   <!-- Back button -->
   <div class="back-container">
-    <a href="../products.html`" class="back-btn">Back</a>
+    <a href="../products.html" class="back-btn">Back</a>
   </div>
 
 </body>
 </html>
-

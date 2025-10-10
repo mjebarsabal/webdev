@@ -10,8 +10,10 @@
 
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link href="./dist/styles.css" rel="stylesheet">
+  <link href="theme.css" rel="stylesheet">
 
-  <title>Aetheria Beauty - Products</title>
+  <title>Aetheria Beauty - Luminous Satins</title>
 
   <style>
     body {
@@ -23,8 +25,8 @@
 
     h2 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 22px;
-      margin-bottom: 24px;
+      font-size: 24px;
+      margin-bottom: 32px;
       text-align: center;
       font-weight: 700;
       color: #333;
@@ -34,6 +36,8 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 28px;
+      max-width: 1100px;
+      margin: 0 auto; /* centers grid */
     }
 
     .card {
@@ -60,6 +64,10 @@
     .card-body {
       padding: 18px 20px;
       text-align: center;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .card-body h3 {
@@ -85,28 +93,26 @@
     }
 
     .price {
-      font-size: 15px;
-      font-weight: bold;
-      color: #D14E79;
+      font-size: 16px;
+      font-weight: 700;
+      color: #d14e79;
       margin-bottom: 12px;
     }
 
-    .add-cart {
-      background: #D14E79;
-      color: #fff;
-      border: none;
-      padding: 10px 16px;
+    .cart-btn {
+      display: inline-block;
+      padding: 8px 18px;
       border-radius: 25px;
-      cursor: pointer;
+      border: none;
+      background: #F9C9D0;
+      color: #5E503F;
       font-size: 14px;
       font-weight: 600;
-      transition: background 0.3s ease;
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
-    .add-cart i {
-      margin-right: 6px;
-    }
-    .add-cart:hover {
-      background: #b63f68;
+    .cart-btn:hover {
+      background: #F9C9D0;
     }
 
     /* Back button */
@@ -134,72 +140,73 @@
 </head>
 <body>
 
-  <h2>Glimmer Gloss</h2>
+  <h2>Luminous Satins</h2>
   <div class="grid">
-
-    <!-- Card Example -->
+    <!-- Card 1 -->
     <div class="card">
-      <img src="../Image/2 Gloss BELIEVER.png" alt="Glimmer Gloss">
+      <img src="../Image/1_Basic_Red.png" alt="Classic Red">
       <div class="card-body">
-        <h3>Believer</h3>
+        <h3>Classic Red</h3>
         <h4>Timeless true red</h4>
-        <p>The iconic red lip gloss that never goes out of style.</p>
+        <p>The iconic red lipstick that never goes out of style.</p>
         <div class="price">₱199</div>
-        <button class="add-cart"><i class="fas fa-cart-plus"></i>Add to Cart</button>
+        <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
       </div>
     </div>
 
+    <!-- Card 2 -->
     <div class="card">
-      <img src="../Image/2 Gloss ESCAPIST.png" alt="Glimmer Gloss">
+      <img src="../Image/1 Deep Berry.png" alt="Mauve Plum">
       <div class="card-body">
-        <h3>Escapist</h3>
+        <h3>Mauve Plum</h3>
         <h4>Sophisticated mauve plum</h4>
-        <p>A sophisticated mauve gloss that flatters all skin tones beautifully.</p>
-        <div class="price">₱199</div>
-        <button class="add-cart"><i class="fas fa-cart-plus"></i>Add to Cart</button>
+        <p>A sophisticated mauve that flatters all skin tones beautifully.</p>
+        <div class="price">₱189</div>
+        <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
       </div>
     </div>
 
+    <!-- Card 3 -->
     <div class="card">
-      <img src="../Image/2 Gloss GOLDEN SHIMMER.png" alt="Glimmer Gloss">
+      <img src="../Image/1 Coral Peach.png" alt="Coral Peach">
       <div class="card-body">
-        <h3>Golden Shimmer</h3>
-        <h4>Fresh coral warmth</h4>
-        <p>A luminous coral gloss with a sun-kissed glow.</p>
-        <div class="price">₱199</div>
-        <button class="add-cart"><i class="fas fa-cart-plus"></i>Add to Cart</button>
+        <h3>Coral Peach</h3>
+        <h4>Vibrant coral matte</h4>
+        <p>Fresh coral warmth with a sun-kissed glow.</p>
+        <div class="price">₱179</div>
+        <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
       </div>
     </div>
 
+    <!-- Card 4 -->
     <div class="card">
-      <img src="../Image/2 Gloss PEPPY.png" alt="Glimmer Gloss">
+      <img src="../Image/1 Rose Kiss.png" alt="Rose Kiss">
       <div class="card-body">
-        <h3>Peppy</h3>
-        <h4>Romantic rose gloss</h4>
-        <p>Soft rose hue for a timeless, flirty glossy finish.</p>
-        <div class="price">₱199</div>
-        <button class="add-cart"><i class="fas fa-cart-plus"></i>Add to Cart</button>
+        <h3>Rose Kiss</h3>
+        <h4>Romantic rose matte</h4>
+        <p>Soft rose hue for a timeless, flirty finish.</p>
+        <div class="price">₱189</div>
+        <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
       </div>
     </div>
 
+    <!-- Card 5 -->
     <div class="card">
-      <img src="../Image/2 Gloss SHEER PINK.png" alt="Glimmer Gloss">
+      <img src="../Image/1 Nude Beige.png" alt="Nude Dream">
       <div class="card-body">
-        <h3>Sheer Pink</h3>
-        <h4>Classic nude gloss</h4>
+        <h3>Nude Dream</h3>
+        <h4>Classic nude matte</h4>
         <p>Subtle beige tones for effortless everyday elegance.</p>
         <div class="price">₱199</div>
-        <button class="add-cart"><i class="fas fa-cart-plus"></i>Add to Cart</button>
+        <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
       </div>
     </div>
-
   </div>
 
   <!-- Back button -->
   <div class="back-container">
-    <a href="../products.html`" class="back-btn">Back</a>
+    <a href="../products.html" class="back-btn">Back</a>
   </div>
 
 </body>
 </html>
-

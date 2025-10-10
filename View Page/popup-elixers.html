@@ -10,8 +10,6 @@
 
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-   <link href="./dist/styles.css" rel="stylesheet">
-  <link href="theme.css" rel="stylesheet">
 
   <title>Aetheria Beauty - Products</title>
 
@@ -67,7 +65,7 @@
     .card-body h3 {
       font-family: 'Montserrat', sans-serif;
       font-size: 18px;
-      margin: 0 0 8px;
+      margin: 0 0 6px;
       font-weight: 700;
       color: #222;
     }
@@ -83,7 +81,32 @@
       font-size: 14px;
       color: #444;
       line-height: 1.4;
-      margin: 0;
+      margin: 0 0 14px;
+    }
+
+    .price {
+      font-size: 15px;
+      font-weight: bold;
+      color: #D14E79;
+      margin-bottom: 12px;
+    }
+
+    .add-cart {
+      background: #D14E79;
+      color: #fff;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+    .add-cart i {
+      margin-right: 6px;
+    }
+    .add-cart:hover {
+      background: #b63f68;
     }
 
     /* Back button */
@@ -113,49 +136,63 @@
 
   <h2>Lip Elixirs</h2>
   <div class="grid">
-    <!-- Example card -->
+    <!-- Card 1 -->
     <div class="card">
       <img src="../Image/5 Fiery Red Tint.png" alt="Lip Elixirs">
       <div class="card-body">
         <h3>Scarlet Bloom</h3>
         <h4>Vibrant scarlet matte</h4>
         <p>A bold scarlet red that lights up every occasion with confidence and charm.</p>
+        <div class="price">₱199</div>
+        <button class="add-cart"><i class="fas fa-cart-plus"></i>Add to Cart</button>
       </div>
     </div>
 
+    <!-- Card 2 -->
     <div class="card">
       <img src="../Image/5  Voyager.png" alt="Lip Elixirs">
       <div class="card-body">
         <h3>Plush Wine</h3>
         <h4>Deep berry velvet</h4>
         <p>Deep berry tones with a velvety finish, perfect for an evening statement look.</p>
+        <div class="price">₱199</div>
+        <button class="add-cart"><i class="fas fa-cart-plus"></i>Add to Cart</button>
       </div>
     </div>
 
+    <!-- Card 3 -->
     <div class="card">
       <img src="../Image/5  Dreamer Tint.png" alt="Lip Elixirs">
       <div class="card-body">
         <h3>Peach Glow</h3>
         <h4>Soft coral radiance</h4>
         <p>A soft coral-peach hue that brings warmth and a natural sunkissed radiance.</p>
+        <div class="price">₱199</div>
+        <button class="add-cart"><i class="fas fa-cart-plus"></i>Add to Cart</button>
       </div>
     </div>
 
+    <!-- Card 4 -->
     <div class="card">
       <img src="../Image/5 Peach Nude Tint.png" alt="Lip Elixirs">
       <div class="card-body">
         <h3>Latte Nude</h3>
         <h4>Classic beige nude</h4>
         <p>A smooth beige nude that blends seamlessly for a timeless, polished look.</p>
+        <div class="price">₱199</div>
+        <button class="add-cart"><i class="fas fa-cart-plus"></i>Add to Cart</button>
       </div>
     </div>
 
+    <!-- Card 5 -->
     <div class="card">
       <img src="../Image/5 Heroine.png" alt="Lip Elixirs">
       <div class="card-body">
         <h3>Blush Petal</h3>
         <h4>Romantic rose satin</h4>
-        <p>Romantic dusty rose with a satin touch, ideal for everyday effortless beauty</p>
+        <p>Romantic dusty rose with a satin touch, ideal for everyday effortless beauty.</p>
+        <div class="price">₱199</div>
+        <button class="add-cart"><i class="fas fa-cart-plus"></i>Add to Cart</button>
       </div>
     </div>
   </div>
@@ -167,3 +204,4 @@
 
 </body>
 </html>
+

@@ -10,8 +10,10 @@
 
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link href="./dist/styles.css" rel="stylesheet">
+  <link href="theme.css" rel="stylesheet">
 
-  <title>Aetheria Beauty - Products</title>
+  <title>Aetheria Beauty - Velvet Mattes</title>
 
   <style>
     body {
@@ -23,8 +25,8 @@
 
     h2 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 22px;
-      margin-bottom: 24px;
+      font-size: 24px;
+      margin-bottom: 32px;
       text-align: center;
       font-weight: 700;
       color: #333;
@@ -34,6 +36,8 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 28px;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
     .card {
@@ -60,6 +64,10 @@
     .card-body {
       padding: 18px 20px;
       text-align: center;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .card-body h3 {
@@ -85,28 +93,26 @@
     }
 
     .price {
-      font-size: 15px;
-      font-weight: bold;
-      color: #D14E79;
+      font-size: 16px;
+      font-weight: 700;
+      color: #d14e79;
       margin-bottom: 12px;
     }
 
-    .add-cart {
-      background: #D14E79;
-      color: #fff;
-      border: none;
-      padding: 10px 16px;
+    .cart-btn {
+      display: inline-block;
+      padding: 8px 18px;
       border-radius: 25px;
-      cursor: pointer;
+      border: none;
+      background: #F9C9D0;
+      color: #5E503F;
       font-size: 14px;
       font-weight: 600;
-      transition: background 0.3s ease;
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
-    .add-cart i {
-      margin-right: 6px;
-    }
-    .add-cart:hover {
-      background: #b63f68;
+    .cart-btn:hover {
+      background: #F9C9D0;
     }
 
     /* Back button */
@@ -124,7 +130,7 @@
     }
     .back-btn:hover {
       background: #F9C9D0;
-      color: #5E503F; 
+      color: #5E503F;
     }
 
     .back-container {
@@ -134,72 +140,73 @@
 </head>
 <body>
 
-  <h2>Glimmer Gloss</h2>
+  <h2>Velvet Mattes</h2>
   <div class="grid">
-
-    <!-- Card Example -->
+    <!-- Card 1 -->
     <div class="card">
-      <img src="../Image/2 Gloss BELIEVER.png" alt="Glimmer Gloss">
+      <img src="../Image/3 Liquid MAROOM.png" alt="Scarlet Fever">
       <div class="card-body">
-        <h3>Believer</h3>
-        <h4>Timeless true red</h4>
-        <p>The iconic red lip gloss that never goes out of style.</p>
+        <h3>Scarlet Fever</h3>
+        <h4>Bold true red matte</h4>
+        <p>A timeless scarlet red that commands attention and never goes out of style.</p>
         <div class="price">₱199</div>
-        <button class="add-cart"><i class="fas fa-cart-plus"></i>Add to Cart</button>
+        <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
       </div>
     </div>
 
+    <!-- Card 2 -->
     <div class="card">
-      <img src="../Image/2 Gloss ESCAPIST.png" alt="Glimmer Gloss">
+      <img src="../Image/3 Liquid PLUM PURPLE.png" alt="Velvet Wine">
       <div class="card-body">
-        <h3>Escapist</h3>
-        <h4>Sophisticated mauve plum</h4>
-        <p>A sophisticated mauve gloss that flatters all skin tones beautifully.</p>
-        <div class="price">₱199</div>
-        <button class="add-cart"><i class="fas fa-cart-plus"></i>Add to Cart</button>
+        <h3>Velvet Wine</h3>
+        <h4>Sophisticated berry plum</h4>
+        <p>A deep, luxurious wine-plum that flatters every skin tone with instant elegance.</p>
+        <div class="price">₱189</div>
+        <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
       </div>
     </div>
 
+    <!-- Card 3 -->
     <div class="card">
-      <img src="../Image/2 Gloss GOLDEN SHIMMER.png" alt="Glimmer Gloss">
+      <img src="../Image/3 Liquid BEIGE.png" alt="Bare Allure">
       <div class="card-body">
-        <h3>Golden Shimmer</h3>
-        <h4>Fresh coral warmth</h4>
-        <p>A luminous coral gloss with a sun-kissed glow.</p>
-        <div class="price">₱199</div>
-        <button class="add-cart"><i class="fas fa-cart-plus"></i>Add to Cart</button>
+        <h3>Bare Allure</h3>
+        <h4>Vibrant coral matte</h4>
+        <p>A vibrant coral shade with a sun-kissed glow for everyday glam.</p>
+        <div class="price">₱179</div>
+        <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
       </div>
     </div>
 
+    <!-- Card 4 -->
     <div class="card">
-      <img src="../Image/2 Gloss PEPPY.png" alt="Glimmer Gloss">
+      <img src="../Image/3 Liquid DEEP BURGUNDY WITH PLUM UNDERTONES.png" alt="Blush Rose">
       <div class="card-body">
-        <h3>Peppy</h3>
-        <h4>Romantic rose gloss</h4>
-        <p>Soft rose hue for a timeless, flirty glossy finish.</p>
-        <div class="price">₱199</div>
-        <button class="add-cart"><i class="fas fa-cart-plus"></i>Add to Cart</button>
+        <h3>Blush Rose</h3>
+        <h4>Romantic rose matte</h4>
+        <p>A soft rosy pink that blends elegance and playfulness.</p>
+        <div class="price">₱189</div>
+        <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
       </div>
     </div>
 
+    <!-- Card 5 -->
     <div class="card">
-      <img src="../Image/2 Gloss SHEER PINK.png" alt="Glimmer Gloss">
+      <img src="../Image/3 Liquid TO THE FULLEST.png" alt="To The Fullest">
       <div class="card-body">
-        <h3>Sheer Pink</h3>
-        <h4>Classic nude gloss</h4>
-        <p>Subtle beige tones for effortless everyday elegance.</p>
+        <h3>To The Fullest</h3>
+        <h4>Plush velvet formula</h4>
+        <p>A rich velvet matte liquid lipstick that delivers bold color with a smooth feel.</p>
         <div class="price">₱199</div>
-        <button class="add-cart"><i class="fas fa-cart-plus"></i>Add to Cart</button>
+        <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
       </div>
     </div>
-
   </div>
 
   <!-- Back button -->
   <div class="back-container">
-    <a href="../products.html`" class="back-btn">Back</a>
+    <a href="../products.html" class="back-btn">Back</a>
   </div>
 
 </body>
 </html>
-
