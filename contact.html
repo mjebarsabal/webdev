@@ -223,6 +223,13 @@ $(document).ready(function () {
     });
   });
 });
+$("#name").on("keypress", function(e) {
+  let regex = /^[a-zA-Z\s]*$/;
+  let char=String.fromCharCode(e.which);
+  if(!regex.test(char)) {
+    e.preventDefault();
+  }
+});
 </script>
 
 </body>
